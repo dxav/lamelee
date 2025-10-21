@@ -74,7 +74,7 @@
 - [x] T027 [P] Comment model in prisma/schema.prisma with user_id FK, experience_id FK, content, timestamps
 - [x] T028 [P] Reaction model in prisma/schema.prisma with user_id FK, experience_id FK, reaction_type, unique constraint
 - [x] T029 [P] PromptRating model in prisma/schema.prisma with user_id FK, prompt_id FK, rating (1-5 check), unique constraint
-- [ ] T030 Run Prisma migration to create database tables: npx prisma migrate dev --name init
+- [x] T030 Run Prisma migration to create database tables: npx prisma migrate dev --name init
 
 ### API Routes - Authentication
 - [x] T031 NextAuth API route in src/pages/api/auth/[...nextauth].ts with GitHub provider configuration
