@@ -46,24 +46,24 @@
 
 ## Phase 3.2: Tests First (TDD) ⚠️ MUST COMPLETE BEFORE 3.3
 **CRITICAL: These tests MUST be written and MUST FAIL before ANY implementation**
-- [ ] T006 [P] Contract test GET /api/experiences in tests/contract/experiences-get.test.ts
-- [ ] T007 [P] Contract test POST /api/experiences in tests/contract/experiences-post.test.ts
-- [ ] T008 [P] Contract test GET /api/experiences/{id} in tests/contract/experiences-id-get.test.ts
-- [ ] T009 [P] Contract test PUT /api/experiences/{id} in tests/contract/experiences-id-put.test.ts
-- [ ] T010 [P] Contract test DELETE /api/experiences/{id} in tests/contract/experiences-id-delete.test.ts
-- [ ] T011 [P] Contract test POST /api/experiences/{id}/comments in tests/contract/comments-post.test.ts
-- [ ] T012 [P] Contract test POST /api/experiences/{id}/reactions in tests/contract/reactions-post.test.ts
-- [ ] T013 [P] Contract test POST /api/prompts/{id}/ratings in tests/contract/ratings-post.test.ts
-- [ ] T014 [P] Contract test GET /api/users/me in tests/contract/users-me.test.ts
-- [ ] T015 [P] Contract test GET /api/users/{id} in tests/contract/users-id.test.ts
-- [ ] T016 [P] Integration test: User authentication via GitHub SSO in tests/integration/auth.test.ts
-- [ ] T017 [P] Integration test: Create experience with prompt and GitHub URL in tests/integration/create-experience.test.ts
-- [ ] T018 [P] Integration test: Browse and filter feed by AI assistant type in tests/integration/feed-filter.test.ts
-- [ ] T019 [P] Integration test: Community interaction (comments, reactions) in tests/integration/community.test.ts
-- [ ] T020 [P] Integration test: User profile and statistics in tests/integration/user-profile.test.ts
-- [ ] T021 [P] Integration test: GitHub URL validation (github.com only) in tests/integration/github-url-validation.test.ts
-- [ ] T022 [P] Integration test: Prompt rating system (1-5 scale) in tests/integration/prompt-rating.test.ts
-- [ ] T023 [P] Integration test: Data retention (2-year cleanup) in tests/integration/data-retention.test.ts
+- [x] T006 [P] Contract test GET /api/experiences in tests/contract/experiences-get.test.ts
+- [x] T007 [P] Contract test POST /api/experiences in tests/contract/experiences-post.test.ts
+- [x] T008 [P] Contract test GET /api/experiences/{id} in tests/contract/experiences-id-get.test.ts
+- [x] T009 [P] Contract test PUT /api/experiences/{id} in tests/contract/experiences-id-put.test.ts
+- [x] T010 [P] Contract test DELETE /api/experiences/{id} in tests/contract/experiences-id-delete.test.ts
+- [x] T011 [P] Contract test POST /api/experiences/{id}/comments in tests/contract/comments-post.test.ts
+- [x] T012 [P] Contract test POST /api/experiences/{id}/reactions in tests/contract/reactions-post.test.ts
+- [x] T013 [P] Contract test POST /api/prompts/{id}/ratings in tests/contract/ratings-post.test.ts
+- [x] T014 [P] Contract test GET /api/users/me in tests/contract/users-me.test.ts
+- [x] T015 [P] Contract test GET /api/users/{id} in tests/contract/users-id.test.ts
+- [x] T016 [P] Integration test: User authentication via GitHub SSO in tests/integration/auth.test.ts
+- [x] T017 [P] Integration test: Create experience with prompt and GitHub URL in tests/integration/create-experience.test.ts
+- [x] T018 [P] Integration test: Browse and filter feed by AI assistant type in tests/integration/feed-filter.test.ts
+- [x] T019 [P] Integration test: Community interaction (comments, reactions) in tests/integration/community.test.ts
+- [x] T020 [P] Integration test: User profile and statistics in tests/integration/user-profile.test.ts
+- [x] T021 [P] Integration test: GitHub URL validation (github.com only) in tests/integration/github-url-validation.test.ts
+- [x] T022 [P] Integration test: Prompt rating system (1-5 scale) in tests/integration/prompt-rating.test.ts
+- [x] T023 [P] Integration test: Data retention (2-year cleanup) in tests/integration/data-retention.test.ts
 
 ## Phase 3.3: Core Implementation (ONLY after tests are failing)
 
