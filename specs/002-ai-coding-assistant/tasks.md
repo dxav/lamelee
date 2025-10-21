@@ -68,33 +68,33 @@
 ## Phase 3.3: Core Implementation (ONLY after tests are failing)
 
 ### Database Models
-- [ ] T024 [P] User model in prisma/schema.prisma with github_id, username, email, avatar_url, bio, timestamps
-- [ ] T025 [P] Experience model in prisma/schema.prisma with user_id FK, title, description, ai_assistant_type, tags array, github_urls array, is_news, timestamps
-- [ ] T026 [P] Prompt model in prisma/schema.prisma with experience_id FK, content, context, results_achieved, timestamp
-- [ ] T027 [P] Comment model in prisma/schema.prisma with user_id FK, experience_id FK, content, timestamps
-- [ ] T028 [P] Reaction model in prisma/schema.prisma with user_id FK, experience_id FK, reaction_type, unique constraint
-- [ ] T029 [P] PromptRating model in prisma/schema.prisma with user_id FK, prompt_id FK, rating (1-5 check), unique constraint
+- [x] T024 [P] User model in prisma/schema.prisma with github_id, username, email, avatar_url, bio, timestamps
+- [x] T025 [P] Experience model in prisma/schema.prisma with user_id FK, title, description, ai_assistant_type, tags array, github_urls array, is_news, timestamps
+- [x] T026 [P] Prompt model in prisma/schema.prisma with experience_id FK, content, context, results_achieved, timestamp
+- [x] T027 [P] Comment model in prisma/schema.prisma with user_id FK, experience_id FK, content, timestamps
+- [x] T028 [P] Reaction model in prisma/schema.prisma with user_id FK, experience_id FK, reaction_type, unique constraint
+- [x] T029 [P] PromptRating model in prisma/schema.prisma with user_id FK, prompt_id FK, rating (1-5 check), unique constraint
 - [ ] T030 Run Prisma migration to create database tables: npx prisma migrate dev --name init
 
 ### API Routes - Authentication
-- [ ] T031 NextAuth API route in src/pages/api/auth/[...nextauth].ts with GitHub provider configuration
+- [x] T031 NextAuth API route in src/pages/api/auth/[...nextauth].ts with GitHub provider configuration
 
 ### API Routes - Experiences
-- [ ] T032 GET /api/experiences route with filtering (ai_assistant, tags, search) and pagination in src/pages/api/experiences/index.ts
-- [ ] T033 POST /api/experiences route with validation and prompt creation in src/pages/api/experiences/index.ts
-- [ ] T034 GET /api/experiences/[id] route with prompts and reactions in src/pages/api/experiences/[id].ts
-- [ ] T035 PUT /api/experiences/[id] route with owner validation in src/pages/api/experiences/[id].ts
-- [ ] T036 DELETE /api/experiences/[id] route with owner validation and cascade delete in src/pages/api/experiences/[id].ts
+- [x] T032 GET /api/experiences route with filtering (ai_assistant, tags, search) and pagination in src/pages/api/experiences/index.ts
+- [x] T033 POST /api/experiences route with validation and prompt creation in src/pages/api/experiences/index.ts
+- [x] T034 GET /api/experiences/[id] route with prompts and reactions in src/pages/api/experiences/[id].ts
+- [x] T035 PUT /api/experiences/[id] route with owner validation in src/pages/api/experiences/[id].ts
+- [x] T036 DELETE /api/experiences/[id] route with owner validation and cascade delete in src/pages/api/experiences/[id].ts
 
 ### API Routes - Comments & Reactions
-- [ ] T037 GET /api/experiences/[id]/comments route in src/pages/api/experiences/[id]/comments.ts
-- [ ] T038 POST /api/experiences/[id]/comments route with validation in src/pages/api/experiences/[id]/comments.ts
-- [ ] T039 POST /api/experiences/[id]/reactions route with unique constraint handling in src/pages/api/experiences/[id]/reactions.ts
+- [x] T037 GET /api/experiences/[id]/comments route in src/pages/api/experiences/[id]/comments.ts
+- [x] T038 POST /api/experiences/[id]/comments route with validation in src/pages/api/experiences/[id]/comments.ts
+- [x] T039 POST /api/experiences/[id]/reactions route with unique constraint handling in src/pages/api/experiences/[id]/reactions.ts
 
 ### API Routes - Ratings & Users
-- [ ] T040 POST /api/prompts/[id]/ratings route with 1-5 validation and average calculation in src/pages/api/prompts/[id]/ratings.ts
-- [ ] T041 GET /api/users/me route returning current user profile in src/pages/api/users/me.ts
-- [ ] T042 GET /api/users/[id] route with experience count and prompt count in src/pages/api/users/[id].ts
+- [x] T040 POST /api/prompts/[id]/ratings route with 1-5 validation and average calculation in src/pages/api/prompts/[id]/ratings.ts
+- [x] T041 GET /api/users/me route returning current user profile in src/pages/api/users/me.ts
+- [x] T042 GET /api/users/[id] route with experience count and prompt count in src/pages/api/users/[id].ts
 
 ### Library & Utilities
 - [ ] T043 [P] Prisma client singleton in src/lib/db.ts with connection pooling
@@ -103,19 +103,19 @@
 - [ ] T046 [P] Authentication middleware in src/lib/auth.ts for protected routes
 
 ### UI Components
-- [ ] T047 [P] ExperienceCard component in src/components/ExperienceCard.tsx displaying title, description, AI assistant type, tags, GitHub URLs
-- [ ] T048 [P] PromptDisplay component in src/components/PromptDisplay.tsx with copy-to-clipboard functionality
-- [ ] T049 [P] UserProfile component in src/components/UserProfile.tsx showing GitHub avatar, username, bio, contributions
-- [ ] T050 [P] CommentList component in src/components/CommentList.tsx with add comment form
-- [ ] T051 [P] ReactionButtons component in src/components/ReactionButtons.tsx (like, helpful, bookmark)
-- [ ] T052 [P] PromptRating component in src/components/PromptRating.tsx with 1-5 star rating UI
+- [x] T047 [P] ExperienceCard component in src/components/ExperienceCard.tsx displaying title, description, AI assistant type, tags, GitHub URLs
+- [x] T048 [P] PromptDisplay component in src/components/PromptDisplay.tsx with copy-to-clipboard functionality
+- [x] T049 [P] UserProfile component in src/components/UserProfile.tsx showing GitHub avatar, username, bio, contributions
+- [x] T050 [P] CommentList component in src/components/CommentList.tsx with add comment form
+- [x] T051 [P] ReactionButtons component in src/components/ReactionButtons.tsx (like, helpful, bookmark)
+- [x] T052 [P] PromptRating component in src/components/PromptRating.tsx with 1-5 star rating UI
 
 ### Pages
-- [ ] T053 Feed page in src/pages/feed.tsx with filtering sidebar (AI assistant type, tags, search) and experience list
-- [ ] T054 Create experience page in src/pages/create.tsx with form validation and prompt addition
-- [ ] T055 Experience detail page in src/pages/experiences/[id].tsx with prompts, comments, reactions
-- [ ] T056 User profile page in src/pages/profile/[id].tsx with experience list and statistics
-- [ ] T057 Login page in src/pages/login.tsx with GitHub OAuth button
+- [x] T053 Feed page in src/pages/feed.tsx with filtering sidebar (AI assistant type, tags, search) and experience list
+- [x] T054 Create experience page in src/pages/create.tsx with form validation and prompt addition
+- [x] T055 Experience detail page in src/pages/experiences/[id].tsx with prompts, comments, reactions
+- [x] T056 User profile page in src/pages/profile/[id].tsx with experience list and statistics
+- [x] T057 Login page in src/pages/login.tsx with GitHub OAuth button
 
 ## Phase 3.4: Integration
 

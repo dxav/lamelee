@@ -1,8 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// Prisma schema for AI Coding Assistant Experience Platform
+// Phase 3.3: Core Implementation Models (T024-T029)
 
 generator client {
   provider = "prisma-client-js"
@@ -11,4 +8,83 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String        @id @default(cuid())
+  githubId     Int           @unique
+  username     String        @unique
+  email        String?       @unique
+  avatarUrl    String?
+  bio          String?
+  lastLogin    DateTime?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  experiences  Experience[]
+  comments     Comment[]
+  reactions    Reaction[]
+  promptRatings PromptRating[]
+}
+
+model Experience {
+  id              String        @id @default(cuid())
+  userId          String
+  user            User          @relation(fields: [userId], references: [id])
+  title           String
+  description     String
+  aiAssistantType String
+  tags            String[]
+  githubUrls      String[]
+  isNews          Boolean       @default(false)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  prompts         Prompt[]
+  comments        Comment[]
+  reactions       Reaction[]
+}
+
+model Prompt {
+  id              String        @id @default(cuid())
+  experienceId    String
+  experience      Experience    @relation(fields: [experienceId], references: [id])
+  content         String
+  context         String?
+  resultsAchieved String?
+  createdAt       DateTime      @default(now())
+  ratings         PromptRating[]
+}
+
+model Comment {
+  id          String     @id @default(cuid())
+  experienceId String
+  experience  Experience @relation(fields: [experienceId], references: [id])
+  userId      String
+  user        User       @relation(fields: [userId], references: [id])
+  content     String
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Reaction {
+  id           String     @id @default(cuid())
+  experienceId String
+  experience   Experience @relation(fields: [experienceId], references: [id])
+  userId       String
+  user         User       @relation(fields: [userId], references: [id])
+  reactionType String
+  createdAt    DateTime   @default(now())
+
+  @@unique([experienceId, userId, reactionType])
+}
+
+model PromptRating {
+  id        String   @id @default(cuid())
+  promptId  String
+  prompt    Prompt   @relation(fields: [promptId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  rating    Int
+  createdAt DateTime @default(now())
+
+  @@unique([promptId, userId])
 }
