@@ -17,6 +17,7 @@ model User {
   email        String?       @unique
   avatarUrl    String?
   bio          String?
+  deletedAt    DateTime?
   lastLogin    DateTime?
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
@@ -36,6 +37,7 @@ model Experience {
   tags            String[]
   githubUrls      String[]
   isNews          Boolean       @default(false)
+  deletedAt       DateTime?
   createdAt       DateTime      @default(now())
   updatedAt       DateTime      @updatedAt
   prompts         Prompt[]
